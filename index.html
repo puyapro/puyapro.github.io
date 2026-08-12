@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puya Ta'ati Profile</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07090e;
+            --card-bg: #121824;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-muted: #8e9bb0;
+        }
+
+        body {
+            background-color: #030407;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+        }
+
+        /* Mobile Container Wrapper */
+        .app-container {
+            width: 100%;
+            max-width: 390px;
+            background-color: var(--bg-dark);
+            border-radius: 36px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Top Profile Card */
+        .profile-card {
+            background: linear-gradient(180deg, #182030 0%, #101522 100%);
+            border-radius: 28px;
+            padding: 20px 16px;
+            border: 1px solid var(--card-border);
+            position: relative;
+        }
+
+        .avatar-wrapper {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 16px auto;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+        }
+
+        .profile-tag {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .bio-list {
+            font-size: 0.85rem;
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .bio-list span {
+            display: block;
+        }
+
+        .profile-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 14px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Link Cards General */
+        .link-card {
+            border-radius: 20px;
+            padding: 14px;
+            position: relative;
+            text-decoration: none !important;
+            color: white !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .external-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .card-title-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .card-subtext {
+            font-size: 0.72rem;
+            opacity: 0.75;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Individual Card Styles */
+        .card-email {
+            background: linear-gradient(135deg, #1c2b42 0%, #121c2d 100%);
+            min-height: 110px;
+        }
+
+        .card-facebook {
+            background: linear-gradient(135deg, #2b7bf6 0%, #185ec7 100%);
+            min-height: 110px;
+        }
+
+        .card-github {
+            background-color: #151a23;
+            padding: 16px;
+        }
+
+        .card-figma {
+            background: linear-gradient(180deg, #1c222d 0%, #11151c 100%);
+            height: 100%;
+            min-height: 220px;
+        }
+
+        .card-dev {
+            background-color: #f5f5f7;
+            color: #111111 !important;
+            border: none;
+            min-height: 102px;
+        }
+
+        .card-dev .external-icon {
+            color: #111111;
+        }
+
+        .card-dev .card-subtext {
+            color: #555555;
+        }
+
+        .card-twitter {
+            background: linear-gradient(135deg, #2aa3f0 0%, #1a85cd 100%);
+            min-height: 102px;
+        }
+
+        .card-instagram {
+            background: linear-gradient(115deg, #6228d7 0%, #ee2a7b 50%, #f9ce34 100%);
+            min-height: 100px;
+        }
+
+        .btn-follow {
+            background-color: #e2e8f0;
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            padding: 2px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Custom Icons */
+        .icon-box-3d {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Profile Header Card -->
+        <div class="profile-card text-center mb-3">
+            <!-- Avatar -->
+            <div class="avatar-wrapper">
+                <img src="profile.png" alt="Puya Ta'ati">
+            </div>
+
+            <!-- User Info -->
+            <h2 class="profile-name">Puya Ta'ati</h2>
+            <div class="profile-tag">@puya-pro</div>
+
+            <!-- Bio list -->
+            <div class="bio-list text-start ps-3 mb-4">
+                <div>
+                    <i class="bi bi-balloon-fill"></i>
+                    14.5.2011
+                </div>
+                <div>
+                    <i class="bi bi-tools"></i>
+                    ML & SoftWare engineer
+                </div>
+                <div>
+                    <i class="bi bi-code-slash"></i>
+                    Python & Golang programmer
+                </div>
+            </div>
+
+            <!-- Footer Location & Birthday -->
+            <div class="profile-footer d-flex justify-content-around align-items-center">
+                <div>
+                    <i class="bi bi-geo-alt me-1"></i> Tehran, Iran
+                </div>
+                <div>
+                    <i class="bi bi-cake2 me-1"></i> Joined world in 2011
+                </div>
+            </div>
+        </div>
+
+        <!-- Links Grid -->
+        <div class="row g-2 mb-2">
+            <!-- Email Card -->
+            <div class="col-6">
+                <a target="_blank" href="mailto:puyataati@gmail.com" class="link-card card-email">
+                    <i class="bi bi-box-arrow-up-right external-icon"></i>
+                    <div class="mb-3">
+                        <i class="bi bi-envelope-fill fs-2"></i>
+                    </div>
+                    <div>
+                        <div class="card-title-text">Email</div>
+                        <div class="card-subtext">puyataati@gmail.com</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Facebook Card -->
+            <div class="col-6">
+                <a target="_blank" href="https://www.linkedin.com/in/puya-pro/" class="link-card card-facebook">
+                    <i class="bi bi-box-arrow-up-right external-icon"></i>
+                    <div class="mb-3">
+                        <i class="bi bi-linkedin fs-2"></i>
+                    </div>
+                    <div>
+                        <div class="card-title-text">Linkedin</div>
+                        <div class="card-subtext">@puya-pro</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GitHub Card (Full Width) -->
+        <div class="mb-2">
+            <a target="_blank" href="https://github.com/puyapro" class="link-card card-github">
+                <i class="bi bi-box-arrow-up-right external-icon"></i>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white text-dark rounded-circle d-flex align-items-center justify-content-center p-2 me-3"
+                        style="width: 42px; height: 42px;">
+                        <i class="bi bi-github fs-4"></i>
+                    </div>
+                    <button class="btn-follow">Follow</button>
+                </div>
+                <div>
+                    <div class="card-title-text">GitHub</div>
+                    <div class="card-subtext">@puyapro</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Two Columns Section -->
+        <div class="row g-2 mb-2">
+            <!-- Figma (Tall Card) -->
+            <div class="col-6">
+                <a target="_blank" href="#" class="link-card card-figma">
+                    <i class="bi bi-box-arrow-up-right external-icon"></i>
+                    <div>
+                        <!-- Figma Icon Colored -->
+                        <i class="bi bi-file-person-fill fs-1"></i>
+                    </div>
+                    <div>
+                        <div class="card-title-text">Download Resume</div>
+                        <div class="card-subtext">my pdf resume</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Column: Dev + Twitter -->
+            <div class="col-6 d-flex flex-column gap-2">
+                <!-- Dev Community Card -->
+                <a target="_blank" href="https://dev.to/puya-pro" class="link-card card-dev">
+                    <i class="bi bi-box-arrow-up-right external-icon"></i>
+                    <div>
+                        <span class="badge bg-dark text-white p-1 rounded font-monospace"
+                            style="font-size: 0.75rem;">DEV</span>
+                    </div>
+                    <div>
+                        <div class="card-title-text" style="color: #111;">Dev-Community</div>
+                        <div class="card-subtext">@puya-pro</div>
+                    </div>
+                </a>
+
+                <!-- Twitter Card -->
+                <a target="_blank" href="https://t.me/puyaـpro" class="link-card card-twitter">
+                    <i class="bi bi-box-arrow-up-right external-icon"></i>
+                    <div>
+                        <i class="bi bi-telegram fs-3"></i>
+                    </div>
+                    <div>
+                        <div class="card-title-text">Telegram</div>
+                        <div class="card-subtext">@puya_pro</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instagram Card (Full Width Gradient) -->
+        <!-- <div>
+            <a target="_blank" href="#" class="link-card card-instagram">
+                <i class="bi bi-box-arrow-up-right external-icon"></i>
+                <div class="mb-3">
+                    <i class="bi bi-instagram fs-2"></i>
+                </div>
+                <div>
+                    <div class="card-title-text">Instagram</div>
+                    <div class="card-subtext">@dev.aqsam</div>
+                </div>
+            </a>
+        </div> -->
+
+    </div>
+
+</body>
+
+</html>
