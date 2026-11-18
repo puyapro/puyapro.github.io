@@ -1,380 +1,159 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puya Ta'ati Profile</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #07090e;
-            --card-bg: #121824;
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-muted: #8e9bb0;
-        }
-
-        body {
-            background-color: #030407;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px 10px;
-        }
-
-        /* Mobile Container Wrapper */
-        .app-container {
-            width: 100%;
-            max-width: 390px;
-            background-color: var(--bg-dark);
-            border-radius: 36px;
-            padding: 16px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Top Profile Card */
-        .profile-card {
-            background: linear-gradient(180deg, #182030 0%, #101522 100%);
-            border-radius: 28px;
-            padding: 20px 16px;
-            border: 1px solid var(--card-border);
-            position: relative;
-        }
-
-        .avatar-wrapper {
-            width: 170px;
-            height: 170px;
-            margin: 0 auto 16px auto;
-            border-radius: 28px;
-            overflow: hidden;
-            background: #1e293b;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .avatar-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-name {
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 2px;
-        }
-
-        .profile-tag {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-        }
-
-        .bio-list {
-            font-size: 0.85rem;
-            color: #d1d5db;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .bio-list span {
-            display: block;
-        }
-
-        .profile-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 14px;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
-        /* Link Cards General */
-        .link-card {
-            border-radius: 20px;
-            padding: 14px;
-            position: relative;
-            text-decoration: none !important;
-            color: white !important;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            overflow: hidden;
-            border: 1px solid var(--card-border);
-        }
-
-        .link-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .external-icon {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .card-title-text {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2px;
-        }
-
-        .card-subtext {
-            font-size: 0.72rem;
-            opacity: 0.75;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Individual Card Styles */
-        .card-email {
-            background: linear-gradient(135deg, #1c2b42 0%, #121c2d 100%);
-            min-height: 110px;
-        }
-
-        .card-facebook {
-            background: linear-gradient(135deg, #2b7bf6 0%, #185ec7 100%);
-            min-height: 110px;
-        }
-
-        .card-github {
-            background-color: #151a23;
-            padding: 16px;
-        }
-
-        .card-figma {
-            background: linear-gradient(180deg, #1c222d 0%, #11151c 100%);
-            height: 100%;
-            min-height: 220px;
-        }
-
-        .card-dev {
-            background-color: #f5f5f7;
-            color: #111111 !important;
-            border: none;
-            min-height: 102px;
-        }
-
-        .card-dev .external-icon {
-            color: #111111;
-        }
-
-        .card-dev .card-subtext {
-            color: #555555;
-        }
-
-        .card-twitter {
-            background: linear-gradient(135deg, #2aa3f0 0%, #1a85cd 100%);
-            min-height: 102px;
-        }
-
-        .card-instagram {
-            background: linear-gradient(115deg, #6228d7 0%, #ee2a7b 50%, #f9ce34 100%);
-            min-height: 100px;
-        }
-
-        .btn-follow {
-            background-color: #e2e8f0;
-            color: #0f172a;
-            border: none;
-            border-radius: 8px;
-            padding: 2px 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        /* Custom Icons */
-        .icon-box-3d {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puya Ta’ati — ML &amp; Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf9;--surface:#fff;--text:#18181b;--muted:#71717a;--line:#e7e5e4;--accent:#3b5bdb;--soft:#eef1fd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0e10;--surface:#161618;--text:#ececee;--muted:#8e8e96;--line:#26262b;--accent:#8aa2ff;--soft:#1c2036}}
+:root[data-theme="dark"]{--bg:#0e0e10;--surface:#161618;--text:#ececee;--muted:#8e8e96;--line:#26262b;--accent:#8aa2ff;--soft:#1c2036}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.ic{width:18px;height:18px;flex:none}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;font-size:14px}
+nav .l{display:flex;gap:22px;align-items:center;color:var(--muted)}
+nav .l a:hover{color:var(--text)}
+nav b{font-weight:600}
+.mode{background:none;border:1px solid var(--line);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px}
+header{padding:80px 0 56px}
+.who{display:flex;gap:20px;align-items:center;margin-bottom:28px}
+.who img{width:100px;height:100px;border: 1px solid white;border-radius:50%;object-fit:cover;background:var(--line)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.1;letter-spacing:-.03em;font-weight:700;margin:0}
+.role{color:var(--muted);margin:10px 0 0;font-size:18px}
+.loc{display:inline-flex;gap:6px;align-items:center;color:var(--muted);font-size:14px;margin-top:14px}
+.loc .ic{width:14px;height:14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:10px 16px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:500;background:var(--surface);transition:.15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.p:hover{color:#fff;opacity:.9}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 24px}
+.group{display:grid;grid-template-columns:130px 1fr;gap:8px 20px;margin-bottom:14px;align-items:baseline}
+.group dt{color:var(--muted);font-size:14px}
+.group dd{margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:3px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;background:var(--surface)}
+.pill.k{background:var(--soft);border-color:transparent;color:var(--accent);font-weight:500}
+.row{display:grid;grid-template-columns:170px 1fr;gap:20px}
+.row .d{color:var(--muted);font-size:14px}
+.row h3{margin:0;font-size:17px;font-weight:600}
+.row p{margin:4px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s}
+a.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card h3{margin:0 0 4px;font-size:16px;font-weight:600}
+.card p{margin:0 0 14px;color:var(--muted);font-size:14px}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:6px;background:var(--soft);color:var(--accent);font-weight:500;margin:0 6px 6px 0}
+.more{display:flex;justify-content:space-between;align-items:center;margin-top:16px;height:48px;padding:0 20px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14px;font-weight:500;transition:.15s}
+.more:hover{border-color:var(--accent);color:var(--accent)}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{position:relative;display:block;width:100%;aspect-ratio:16/10;background:var(--soft);border:0;border-bottom:1px solid var(--line);padding:0;cursor:zoom-in;color:var(--accent)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;font-size:13px;font-weight:500}
+.thumb img+.ph{display:none}
+.cb{padding:16px 18px 12px}
+.cb h3{margin:0 0 4px;font-size:15px;font-weight:600;line-height:1.4}
+.cb p{margin:0;color:var(--muted);font-size:14px}
+.cb small{display:block;color:var(--muted);font-size:12px;margin:2px 0 10px}
+.cb small:empty{display:none}
+dialog{border:0;border-radius:14px;padding:0;max-width:min(92vw,900px);background:var(--surface);color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);font-weight:600;font-size:15px;gap:16px}
+dialog header button{background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+dialog img{display:block;max-width:100%;max-height:75vh;margin:0 auto}
+dialog .none{padding:40px 24px;text-align:center;color:var(--muted);font-size:14px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.contact a{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:.15s}
+.contact a:hover{border-color:var(--accent)}
+.contact .ic{width:20px;height:20px;color:var(--accent)}
+.contact span{display:block;line-height:1.3;font-weight:500;font-size:15px}
+.contact small{color:var(--muted);font-size:13px;font-weight:400}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+@media(max-width:640px){nav .l a{display:none}header{padding:48px 0 36px}.group,.row{grid-template-columns:1fr}.row .d{margin-bottom:-12px}}
+</style>
 </head>
-
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-mail" viewBox="0 0 16 16"><path fill="currentColor" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></symbol>
+<symbol id="i-gh" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></symbol>
+<symbol id="i-in" viewBox="0 0 16 16"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></symbol>
+<symbol id="i-code" viewBox="0 0 16 16"><path fill="currentColor" d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/></symbol>
+<symbol id="i-tg" viewBox="0 0 16 16"><path fill="currentColor" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372zm-2.54 1.183L5.93 9.363 1.591 6.602z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 15s5-4.6 5-8.2A5 5 0 0 0 3 6.8C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.8" r="1.8"/></g></symbol>
+<symbol id="i-dl" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M8 2v8m-3-3 3 3 3-3M2.5 13.5h11"/></symbol>
+<symbol id="i-job" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1.5" y="4.5" width="13" height="9" rx="1.5"/><path d="M5.5 4.5v-1a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1M1.5 8.5h13"/></g></symbol>
+<symbol id="i-award" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><circle cx="8" cy="6" r="4"/><path d="M5.5 9.3 4.5 14.5 8 12.8l3.5 1.7-1-5.2"/></g></symbol>
+<symbol id="i-ext" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7.5 8.5"/></symbol>
+</defs></svg>
+<nav><div class="wrap"><b>puya-pro</b><div class="l"><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#certs">Certificates</a><a href="#contact">Contact</a><button class="mode" id="th" aria-label="Toggle theme">◐</button></div></div></nav>
+<main class="wrap">
+<header>
+<div class="who"><img src="https://puyapro.github.io/profile.png" alt="Puya Ta’ati" onerror="this.style.visibility='hidden'"><div><h1>Puya Ta’ati</h1><p class="role">ML &amp; Software Engineer · Founder at PyTech</p></div></div>
+<span class="loc"><svg class="ic"><use href="#i-pin"/></svg>Tehran, Iran · @puya-pro</span>
+<div class="btns"><a class="btn p" href="#"><svg class="ic"><use href="#i-dl"/></svg>Resume</a><a class="btn" href="mailto:puyataati@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>Email</a><a class="btn" href="https://github.com/puyapro"><svg class="ic"><use href="#i-gh"/></svg>GitHub</a></div>
+</header>
 
-    <div class="app-container">
+<section id="skills"><h2>Skills</h2>
+<dl style="margin:0">
+<div class="group"><dt>Languages</dt><dd><span class="pill k">Python</span><span class="pill k">Go</span><span class="pill">HTML</span><span class="pill">CSS</span></dd></div>
+<div class="group"><dt>Engineering</dt><dd><span class="pill">Machine Learning</span><span class="pill">Full-Stack Development</span><span class="pill">Arduino</span><span class="pill">Ethical Hacking</span></dd></div>
+<div class="group"><dt>Tools</dt><dd><span class="pill">Git</span><span class="pill">GitHub</span></dd></div>
+<div class="group"><dt>Leadership</dt><dd><span class="pill">Project Management</span><span class="pill">Management</span><span class="pill">Start-ups Management</span></dd></div>
+</dl></section>
 
-        <!-- Profile Header Card -->
-        <div class="profile-card text-center mb-3">
-            <!-- Avatar -->
-            <div class="avatar-wrapper">
-                <img src="profile.png" alt="Puya Ta'ati">
-            </div>
+<section id="experience"><h2>Experience</h2>
+<div class="row"><div class="d">Nov 2024 – Aug 2025<br>Part-time</div><div><h3>Founder</h3><p>PyTech (former DarkRoom) — teaching skills for hackers and programmers.</p></div></div>
+</section>
 
-            <!-- User Info -->
-            <h2 class="profile-name">Puya Ta'ati</h2>
-            <div class="profile-tag">@puya-pro</div>
+<section id="projects"><h2>Projects</h2>
+<div class="grid">
+<a class="card" href="https://github.com/puyapro/gobank"><h3>gobank</h3><p>Small bank system built with Go.</p><span class="tag">Go</span></a>
+<a class="card" href="https://github.com/puyapro/Parr"><h3>Parr</h3><p>An easy CSS library.</p><span class="tag">CSS</span></a>
+<a class="card" href="https://github.com/puyapro/CinemaTicket"><h3>CinemaTicket</h3><p>Cinema ticket front-end theme.</p><span class="tag">HTML</span><span class="tag">CSS</span></a>
+</div>
+<a class="more" href="https://github.com/puyapro?tab=repositories"><span>Show more on GitHub</span><svg class="ic"><use href="#i-ext"/></svg></a>
+</section>
 
-            <!-- Bio list -->
-            <div class="bio-list text-start ps-3 mb-4">
-                <div>
-                    <i class="bi bi-balloon-fill"></i>
-                    14.5.2011
-                </div>
-                <div>
-                    <i class="bi bi-tools"></i>
-                    ML & SoftWare engineer
-                </div>
-                <div>
-                    <i class="bi bi-code-slash"></i>
-                    Python & Golang programmer
-                </div>
-            </div>
+<section id="certs"><h2>Certificates &amp; Honors</h2>
+<div class="grid">
+<article class="cert"><button class="thumb" data-src="certs/cansat-2024.jpg" data-title="Commemoration — First Student Team, Iran CanSat 2024" aria-label="View certificate: Commemoration — First Student Team, Iran CanSat 2024"><img src="https://github.com/puyapro/puyapro.github.io/blob/main/IMG_20260214_121652%20(1).jpg?raw=true" alt="" loading="lazy" onerror="this.remove()"><span class="ph"><svg class="ic"><use href="#i-award"/></svg>View certificate</span></button><div class="cb"><h3>Commemoration — First Student Team, Iran CanSat 2024</h3><p>Aerospace Research Institute</p><small>2024</small><div><span class="tag">Project Management</span></div></div></article>
+<article class="cert"><button class="thumb" data-src="certs/fira-2025.jpg" data-title="Wheeled Sports Robot (under 19) — Fira Iran 2025 Open Competition" aria-label="View certificate: Wheeled Sports Robot (under 19) — Fira Iran 2025 Open Competition"><img src="https://github.com/puyapro/puyapro.github.io/blob/main/CamScanner%2007-31-2025%2012.38%20(1).jpg?raw=true" alt="" loading="lazy" onerror="this.remove()"><span class="ph"><svg class="ic"><use href="#i-award"/></svg>View certificate</span></button><div class="cb"><h3>Wheeled Sports Robot (under 19) — Fira Iran 2025 Open Competition</h3><p>Iran FIRA Regional Chapter</p><small>2025</small><div><span class="tag">Arduino</span></div></div></article>
+<article class="cert"><button class="thumb" data-src="certs/pandora-lecture.jpg" data-title="Scientific Lecture — Pandora Children and Adolescents Event" aria-label="View certificate: Scientific Lecture — Pandora Children and Adolescents Event"><img src="https://github.com/puyapro/puyapro.github.io/blob/main/CamScanner%2007-31-2025%2012.47.jpg?raw=true" alt="" loading="lazy" onerror="this.remove()"><span class="ph"><svg class="ic"><use href="#i-award"/></svg>View certificate</span></button><div class="cb"><h3>Scientific Lecture — Pandora Children and Adolescents Event</h3><p>STeam group</p><small></small><div><span class="tag">Python</span><span class="tag">Ethical Hacking</span></div></div></article>
+<article class="cert"><button class="thumb" data-src="certs/danova-first-place.jpg" data-title="First Place in the Country — 3rd Danova Student Technological Achievements Exhibition" aria-label="View certificate: First Place in the Country — 3rd Danova Student Technological Achievements Exhibition"><img src="https://github.com/puyapro/puyapro.github.io/blob/main/InShot_20260520_222525471%20(1).jpg?raw=true" alt="" loading="lazy" onerror="this.remove()"><span class="ph"><svg class="ic"><use href="#i-award"/></svg>View certificate</span></button><div class="cb"><h3>First Place in the Country — 3rd Danova Student Technological Achievements Exhibition</h3><p>Pardis Technology Park</p><small></small><div></div></div></article>
+<article class="cert"><button class="thumb" data-src="certs/git-github-2026.jpg" data-title="Comprehensive Git &amp; GitHub Course 2026" aria-label="View certificate: Comprehensive Git &amp; GitHub Course 2026"><img src="https://github.com/puyapro/puyapro.github.io/blob/main/Puya%20Taati-MK-VUT3TZ%20(3).png?raw=true" alt="" loading="lazy" onerror="this.remove()"><span class="ph"><svg class="ic"><use href="#i-award"/></svg>View certificate</span></button><div class="cb"><h3>Comprehensive Git &amp; GitHub Course 2026</h3><p>Maktabkhooneh</p><small>Issued Sep 2026 · ID MK-VUT3TZ</small><div><span class="tag">Git</span><span class="tag">GitHub</span></div></div></article>
+</div></section>
 
-            <!-- Footer Location & Birthday -->
-            <div class="profile-footer d-flex justify-content-around align-items-center">
-                <div>
-                    <i class="bi bi-geo-alt me-1"></i> Tehran, Iran
-                </div>
-                <div>
-                    <i class="bi bi-cake2 me-1"></i> Joined world in 2011
-                </div>
-            </div>
-        </div>
+<section id="contact"><h2>Contact</h2>
+<div class="contact">
+<a href="mailto:puyataati@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span>Email<br><small>puyataati@gmail.com</small></span></a>
+<a href="https://www.linkedin.com/in/puya-pro/"><svg class="ic"><use href="#i-in"/></svg><span>LinkedIn<br><small>@puya-pro</small></span></a>
+<a href="https://github.com/puyapro"><svg class="ic"><use href="#i-gh"/></svg><span>GitHub<br><small>@puyapro</small></span></a>
+<a href="https://dev.to/puya-pro"><svg class="ic"><use href="#i-code"/></svg><span>DEV<br><small>@puya-pro</small></span></a>
+<a href="https://t.me/puya_pro"><svg class="ic"><use href="#i-tg"/></svg><span>Telegram<br><small>@puya_pro</small></span></a>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Puya Ta’ati</div></footer>
 
-        <!-- Links Grid -->
-        <div class="row g-2 mb-2">
-            <!-- Email Card -->
-            <div class="col-6">
-                <a target="_blank" href="mailto:puyataati@gmail.com" class="link-card card-email">
-                    <i class="bi bi-box-arrow-up-right external-icon"></i>
-                    <div class="mb-3">
-                        <i class="bi bi-envelope-fill fs-2"></i>
-                    </div>
-                    <div>
-                        <div class="card-title-text">Email</div>
-                        <div class="card-subtext">puyataati@gmail.com</div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Facebook Card -->
-            <div class="col-6">
-                <a target="_blank" href="https://www.linkedin.com/in/puya-pro/" class="link-card card-facebook">
-                    <i class="bi bi-box-arrow-up-right external-icon"></i>
-                    <div class="mb-3">
-                        <i class="bi bi-linkedin fs-2"></i>
-                    </div>
-                    <div>
-                        <div class="card-title-text">Linkedin</div>
-                        <div class="card-subtext">@puya-pro</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- GitHub Card (Full Width) -->
-        <div class="mb-2">
-            <a target="_blank" href="https://github.com/puyapro" class="link-card card-github">
-                <i class="bi bi-box-arrow-up-right external-icon"></i>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white text-dark rounded-circle d-flex align-items-center justify-content-center p-2 me-3"
-                        style="width: 42px; height: 42px;">
-                        <i class="bi bi-github fs-4"></i>
-                    </div>
-                    <button class="btn-follow">Follow</button>
-                </div>
-                <div>
-                    <div class="card-title-text">GitHub</div>
-                    <div class="card-subtext">@puyapro</div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Two Columns Section -->
-        <div class="row g-2 mb-2">
-            <!-- Figma (Tall Card) -->
-            <div class="col-6">
-                <a target="_blank" href="#" class="link-card card-figma">
-                    <i class="bi bi-box-arrow-up-right external-icon"></i>
-                    <div>
-                        <!-- Figma Icon Colored -->
-                        <i class="bi bi-file-person-fill fs-1o"></i>
-                    </div>
-                    <div>
-                        <div class="card-title-text">Download Resume</div>
-                        <div class="card-subtext">my pdf resume</div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Right Column: Dev + Twitter -->
-            <div class="col-6 d-flex flex-column gap-2">
-                <!-- Dev Community Card -->
-                <a target="_blank" href="https://dev.to/puya-pro" class="link-card card-dev">
-                    <i class="bi bi-box-arrow-up-right external-icon"></i>
-                    <div>
-                        <span class="badge bg-dark text-white p-1 rounded font-monospace"
-                            style="font-size: 0.75rem;">DEV</span>
-                    </div>
-                    <div>
-                        <div class="card-title-text" style="color: #111;">Dev-Community</div>
-                        <div class="card-subtext">@puya-pro</div>
-                    </div>
-                </a>
-
-                <!-- Twitter Card -->
-                <a target="_blank" href="https://t.me/puyaـpro" class="link-card card-twitter">
-                    <i class="bi bi-box-arrow-up-right external-icon"></i>
-                    <div>
-                        <i class="bi bi-telegram fs-3"></i>
-                    </div>
-                    <div>
-                        <div class="card-title-text">Telegram</div>
-                        <div class="card-subtext">@puya_pro</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-
-
-        <div class="my-5 d-flex flex-column gap-4">
-            <h3>My Projects</h3>
-
-            <a href="https://github.com/puyapro/gobank" target="_blank" class="text-decoration-none">
-                <div class="border border-1 rounded-4 p-3">
-                    <h5 class="text-white">gobank</h5>
-                    <p class="fs-6 text-secondary">Small Bank system with Go</p>
-                    <span class="text-info fs-6">Go</span>
-                </div>
-            </a>
-            <a href="https://github.com/puyapro/Parr" target="_blank" class="text-decoration-none">
-                <div class="border border-1 rounded-4 p-3">
-                    <h5 class="text-white">Parr</h5>
-                    <p class="fs-6 text-secondary">easy css library</p>
-                    <span class="text-danger fs-6">CSS</span>
-                </div>
-            </a>
-            <a href="https://github.com/puyapro/CinemaTicket" target="_blank" class="text-decoration-none">
-                <div class="border border-1 rounded-4 p-3">
-                    <h5 class="text-white">CinemaTicket</h5>
-                    <p class="fs-6 text-secondary">CinemaTicket front-end theme</p>
-                    <span class="text-danger fs-6">CSS</span>
-                </div>
-            </a>
-            <a href="https://github.com/puyapro?tab=repositories" class="fs-4 text-white border-1 border p-1 border-secondary rounded-pill text-center text-decoration-none">Show more ...</a>
-        </div>
-
-
-    </div>
-
+<dialog id="dlg"><header><span id="dt"></span><button id="dx" aria-label="Close">×</button></header><div id="db"></div></dialog>
+<script>
+var r=document.documentElement;
+document.getElementById('th').onclick=function(){var d=r.getAttribute('data-theme');var dark=d?d==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.setAttribute('data-theme',dark?'light':'dark')};
+var dlg=document.getElementById('dlg'),db=document.getElementById('db');
+document.querySelectorAll('.thumb').forEach(function(b){b.onclick=function(){
+document.getElementById('dt').textContent=b.dataset.title;db.innerHTML='';
+var t=b.querySelector('img');if(t){var i=document.createElement('img');i.src=t.currentSrc||t.src;i.alt=b.dataset.title;db.appendChild(i)}
+else{db.innerHTML='<div class="none">Certificate image not added yet.</div>'}
+dlg.showModal()}});
+document.getElementById('dx').onclick=function(){dlg.close()};
+dlg.onclick=function(e){if(e.target===dlg)dlg.close()};
+</script>
 </body>
-
 </html>
